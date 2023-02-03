@@ -21,8 +21,8 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install -j$(nproc) gd
 
 RUN echo "opcache.enable=1" > /usr/local/etc/php/conf.d/opcache.ini
-RUN printf "\n" | pecl install apcu xdebug mongodb memcached
-RUN docker-php-ext-enable xdebug apcu mongodb memcached
+RUN printf "\n" | pecl install apcu mongodb
+RUN docker-php-ext-enable apcu mongodb
 
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && mv composer.phar /usr/local/bin/composer
 
