@@ -1,13 +1,15 @@
 <?php
 // include the necessary files
-require_once('../app/lib/Database.php');
-require_once('../app/models/TicTacToeModel.php');
-require_once('../app/controllers/TicTacToeController.php');
+require_once('lib/Database.php');
+require_once('models/TicTacToeModel.php');
+require_once('controllers/TicTacToeController.php');
 
 // instantiate the database object and the TicTacToeModel object
 $database = new Database();
 $db = $database->connect();
 $model = new TicTacToeModel($db);
+$results=$model->getGameState(1);
+
 
 // // instantiate the TicTacToeController object
 // $controller = new TicTacToeController($model);
@@ -22,4 +24,5 @@ $model = new TicTacToeModel($db);
 // } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 //     $controller->reset();
 // }
+
 ?>

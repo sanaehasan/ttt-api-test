@@ -8,7 +8,8 @@ class TicTacToeController {
 
     public function index() {
         $game = $this->model->getGameState();
-        require_once('/../views/json/game.php');
+        require_once('../views/json/game.php');
+        
     }
 
     // public function play($row, $col) {
@@ -24,7 +25,7 @@ class TicTacToeController {
 
     //     // get the updated game state and return it
     //     $game = $this->model->getGameState();
-    //     require_once('/../views/json/game.php');
+    //     require_once('../views/json/game.php');
     // }
 
     // public function reset() {
